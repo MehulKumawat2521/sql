@@ -1,0 +1,23 @@
+select current_date(),curtime(),current_timestamp() from dual;
+select now(), adddate(now(),2) from dual;
+select now(), adddate(now(), interval 2 month) from dual;
+select now(), datediff(now(), '2024-11-28') from dual;
+select last_day(now()) from dual;
+select month(now()) from dual;
+select year(now()) from dual;
+select date_format(now(),"current day is %a ") from dual;
+select date_format(now(),"current month is %M ") from dual;
+select date_format(now(),"current month is %m  or %c") from dual;
+select date_format(now(),"no of hour is %h ") from dual;
+-- multi-row functions
+use sakila;
+Select * from payment;
+select distinct(customer_id),amount from payment;
+Select sum(amount) from payment;
+Select count(amount) from payment;
+Select count(*) from payment;
+Select avg(amount) from payment;
+Select max(amount) from payment;
+Select min(amount) from payment;
+select sum(amount) from payment where customer_id=1;
+select customer_id from payment group by customer_id;
